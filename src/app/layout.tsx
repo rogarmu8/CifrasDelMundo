@@ -19,7 +19,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    url: 'https://cifrasdelmundo.com/',
     title: 'CifrasDelMundo.com - Preguntas Numéricas',
     description: 'Descubre el mundo a través de números. Juego de trivia con preguntas que siempre se responden con cifras.',
     images: ['https://cifrasdelmundo.com/favicon.png'],
