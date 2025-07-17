@@ -67,6 +67,67 @@ export const questions: Question[] = [
     explanation: "El guepardo puede alcanzar velocidades de hasta 110 kilómetros por hora, siendo el animal terrestre más rápido.",
     category: "Naturaleza"
   },
+  // NUEVAS PREGUNTAS ADICIONALES - NATURALEZA
+  {
+    question: "¿Cuántos metros de longitud puede alcanzar una anaconda verde hembra adulta?",
+    answer: 9,
+    explanation: "Una anaconda verde hembra adulta puede alcanzar hasta 9 metros de longitud, siendo la serpiente más pesada del mundo.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuántos años puede vivir un coral de aguas profundas?",
+    answer: 4000,
+    explanation: "Algunos corales de aguas profundas pueden vivir hasta 4,000 años, siendo uno de los organismos más longevos del planeta.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuántos kilómetros por hora puede nadar un pez vela del Pacífico?",
+    answer: 110,
+    explanation: "El pez vela del Pacífico puede alcanzar velocidades de hasta 110 kilómetros por hora, siendo el pez más rápido del océano.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuántos metros de envergadura tiene el albatros real del sur?",
+    answer: 3,
+    explanation: "El albatros real del sur tiene una envergadura de hasta 3 metros, siendo el ave con mayor envergadura del mundo.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuántos años puede vivir un erizo de mar rojo?",
+    answer: 200,
+    explanation: "El erizo de mar rojo puede vivir hasta 200 años, siendo uno de los invertebrados más longevos del océano.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuántos kilómetros puede migrar una mariposa monarca en una sola generación?",
+    answer: 4800,
+    explanation: "Una mariposa monarca puede migrar hasta 4,800 kilómetros en una sola generación, desde Canadá hasta México.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuántos metros de profundidad puede alcanzar un cachalote en una inmersión?",
+    answer: 3000,
+    explanation: "Un cachalote puede sumergirse hasta 3,000 metros de profundidad, siendo el mamífero que bucea más profundo.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuántos años puede vivir una almeja de Islandia?",
+    answer: 507,
+    explanation: "La almeja de Islandia puede vivir hasta 507 años, siendo el animal más longevo conocido en la Tierra.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuántos kilómetros por hora puede volar un halcón peregrino en picada?",
+    answer: 389,
+    explanation: "El halcón peregrino puede alcanzar velocidades de hasta 389 kilómetros por hora en picada, siendo el animal más rápido del mundo.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuántos metros de altura puede saltar un delfín mular?",
+    answer: 6,
+    explanation: "Un delfín mular puede saltar hasta 6 metros de altura fuera del agua, siendo uno de los saltos más impresionantes del océano.",
+    category: "Naturaleza"
+  },
   // NUEVAS PREGUNTAS - GEOGRAFÍA
   {
     question: "¿Cuántos metros de profundidad tiene el punto más profundo del océano, la Fosa de las Marianas?",
@@ -126,6 +187,67 @@ export const questions: Question[] = [
     question: "¿Cuántos kilómetros de longitud tiene la Gran Barrera de Coral?",
     answer: 2300,
     explanation: "La Gran Barrera de Coral tiene una longitud de 2,300 kilómetros, siendo el sistema de arrecifes más grande del mundo.",
+    category: "Geografía"
+  },
+  // NUEVAS PREGUNTAS ADICIONALES - GEOGRAFÍA
+  {
+    question: "¿Cuántos metros de profundidad tiene el lago Vostok en la Antártida?",
+    answer: 800,
+    explanation: "El lago Vostok en la Antártida tiene una profundidad de 800 metros, siendo el lago subglacial más profundo del mundo.",
+    category: "Geografía"
+  },
+  {
+    question: "¿Cuántos kilómetros de longitud tiene el sistema de cuevas más largo del mundo, Mammoth Cave?",
+    answer: 676,
+    explanation: "El sistema de cuevas Mammoth Cave en Kentucky tiene 676 kilómetros de longitud explorada, siendo el más largo del mundo.",
+    category: "Geografía"
+  },
+  {
+    question: "¿Cuántos metros de altura tiene el acantilado más alto del mundo, el acantilado de Thor?",
+    answer: 1370,
+    explanation: "El acantilado de Thor en Groenlandia tiene una altura de 1,370 metros, siendo el acantilado más alto del mundo.",
+    category: "Geografía"
+  },
+  {
+    question: "¿Cuántos kilómetros cuadrados tiene el glaciar más grande del mundo, el glaciar Lambert?",
+    answer: 100000,
+    explanation: "El glaciar Lambert en la Antártida tiene una superficie de 100,000 kilómetros cuadrados, siendo el glaciar más grande del mundo.",
+    category: "Geografía"
+  },
+  {
+    question: "¿Cuántos metros de profundidad tiene la sima más profunda del mundo, la Sima Krubera?",
+    answer: 2197,
+    explanation: "La Sima Krubera en Georgia tiene una profundidad de 2,197 metros, siendo la sima más profunda del mundo.",
+    category: "Geografía"
+  },
+  {
+    question: "¿Cuántos kilómetros de longitud tiene el cañón más largo del mundo, el Cañón del Colorado?",
+    answer: 446,
+    explanation: "El Cañón del Colorado tiene una longitud de 446 kilómetros, siendo el cañón más largo del mundo.",
+    category: "Geografía"
+  },
+  {
+    question: "¿Cuántos metros de altura tiene la duna más alta del mundo, la Duna Federico Kirbus?",
+    answer: 1234,
+    explanation: "La Duna Federico Kirbus en Argentina tiene una altura de 1,234 metros, siendo la duna más alta del mundo.",
+    category: "Geografía"
+  },
+  {
+    question: "¿Cuántos kilómetros cuadrados tiene el bosque más grande del mundo, la Taiga Siberiana?",
+    answer: 5800000,
+    explanation: "La Taiga Siberiana tiene una superficie de 5.8 millones de kilómetros cuadrados, siendo el bosque más grande del mundo.",
+    category: "Geografía"
+  },
+  {
+    question: "¿Cuántos metros de profundidad tiene el lago más profundo de América, el lago Titicaca?",
+    answer: 281,
+    explanation: "El lago Titicaca tiene una profundidad máxima de 281 metros, siendo el lago más profundo de América del Sur.",
+    category: "Geografía"
+  },
+  {
+    question: "¿Cuántos kilómetros de longitud tiene el río más largo de Europa, el Volga?",
+    answer: 3692,
+    explanation: "El río Volga tiene una longitud de 3,692 kilómetros, siendo el río más largo de Europa.",
     category: "Geografía"
   },
   // NUEVAS PREGUNTAS - HISTORIA
@@ -189,6 +311,67 @@ export const questions: Question[] = [
     explanation: "El Imperio Romano de Occidente cayó en el año 476 d.C. con la deposición del último emperador, Rómulo Augústulo.",
     category: "Historia"
   },
+  // NUEVAS PREGUNTAS ADICIONALES - HISTORIA
+  {
+    question: "¿En qué año se fundó la ciudad de Constantinopla?",
+    answer: 330,
+    explanation: "La ciudad de Constantinopla fue fundada en el año 330 d.C. por el emperador Constantino el Grande.",
+    category: "Historia"
+  },
+  {
+    question: "¿En qué año se descubrió la tumba de Tutankamón?",
+    answer: 1922,
+    explanation: "La tumba de Tutankamón fue descubierta en 1922 por el arqueólogo Howard Carter en el Valle de los Reyes.",
+    category: "Historia"
+  },
+  {
+    question: "¿En qué año se construyó la primera pirámide de Egipto, la Pirámide de Djoser?",
+    answer: 2630,
+    explanation: "La Pirámide de Djoser, la primera pirámide de Egipto, fue construida alrededor del año 2630 a.C.",
+    category: "Historia"
+  },
+  {
+    question: "¿En qué año se fundó la ciudad de Alejandría?",
+    answer: 331,
+    explanation: "La ciudad de Alejandría fue fundada en el año 331 a.C. por Alejandro Magno en Egipto.",
+    category: "Historia"
+  },
+  {
+    question: "¿En qué año se construyó el Coliseo de Roma?",
+    answer: 80,
+    explanation: "El Coliseo de Roma fue inaugurado en el año 80 d.C. por el emperador Tito.",
+    category: "Historia"
+  },
+  {
+    question: "¿En qué año se fundó la ciudad de Cartago?",
+    answer: 814,
+    explanation: "La ciudad de Cartago fue fundada en el año 814 a.C. por colonos fenicios de Tiro.",
+    category: "Historia"
+  },
+  {
+    question: "¿En qué año se construyó la Gran Pirámide de Giza?",
+    answer: 2560,
+    explanation: "La Gran Pirámide de Giza fue construida alrededor del año 2560 a.C. durante el reinado del faraón Keops.",
+    category: "Historia"
+  },
+  {
+    question: "¿En qué año se fundó la ciudad de Babilonia?",
+    answer: 1894,
+    explanation: "La ciudad de Babilonia fue fundada en el año 1894 a.C. por el rey amorreo Sumu-abum.",
+    category: "Historia"
+  },
+  {
+    question: "¿En qué año se construyó el Partenón de Atenas?",
+    answer: 438,
+    explanation: "El Partenón de Atenas fue completado en el año 438 a.C. durante el gobierno de Pericles.",
+    category: "Historia"
+  },
+  {
+    question: "¿En qué año se fundó la ciudad de Pompeya?",
+    answer: 600,
+    explanation: "La ciudad de Pompeya fue fundada alrededor del año 600 a.C. por los oscos en la región de Campania.",
+    category: "Historia"
+  },
   // NUEVAS PREGUNTAS - MATEMÁTICAS
   {
     question: "¿Cuántos decimales tiene el número pi (π) conocidos hasta 2024?",
@@ -220,95 +403,133 @@ export const questions: Question[] = [
     explanation: "Un campo de fútbol reglamentario tiene 7,140 metros cuadrados (105 metros × 68 metros).",
     category: "Matemáticas"
   },
+  // NUEVAS PREGUNTAS ADICIONALES - MATEMÁTICAS
   {
-    question: "¿Cuántos mililitros hay en un litro?",
-    answer: 1000,
-    explanation: "Un litro equivale a 1,000 mililitros.",
+    question: "¿Cuántos números perfectos se conocen hasta 2024?",
+    answer: 51,
+    explanation: "Hasta 2024 se conocen 51 números perfectos, siendo el último descubierto en 2018.",
     category: "Matemáticas"
   },
   {
-    question: "¿Cuántos centímetros hay en un metro?",
-    answer: 100,
-    explanation: "Un metro equivale a 100 centímetros.",
+    question: "¿Cuántos dígitos tiene el número primo más grande conocido hasta 2024?",
+    answer: 24862048,
+    explanation: "El número primo más grande conocido hasta 2024 tiene 24,862,048 dígitos.",
     category: "Matemáticas"
   },
   {
-    question: "¿Cuántos gramos hay en un kilogramo?",
-    answer: 1000,
-    explanation: "Un kilogramo equivale a 1,000 gramos.",
+    question: "¿Cuántos grados suman los ángulos internos de un dodecágono?",
+    answer: 1800,
+    explanation: "Los ángulos internos de un dodecágono suman 1,800 grados (12 lados × 150 grados cada uno).",
     category: "Matemáticas"
   },
   {
-    question: "¿Cuántos minutos hay en un día?",
-    answer: 1440,
-    explanation: "Un día tiene 1,440 minutos (24 horas × 60 minutos).",
+    question: "¿Cuántos metros cúbicos tiene un cubo de Rubik estándar?",
+    answer: 0,
+    explanation: "Un cubo de Rubik estándar tiene un volumen de 0.000125 metros cúbicos (5.7 cm de lado).",
     category: "Matemáticas"
   },
   {
-    question: "¿Cuántos segundos hay en una hora?",
-    answer: 3600,
-    explanation: "Una hora tiene 3,600 segundos (60 minutos × 60 segundos).",
+    question: "¿Cuántos números de Fibonacci hay entre 1 y 1 millón?",
+    answer: 30,
+    explanation: "Entre 1 y 1 millón hay 30 números de Fibonacci: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811, 514229, 832040.",
+    category: "Matemáticas"
+  },
+  {
+    question: "¿Cuántos metros cuadrados tiene un campo de baloncesto NBA?",
+    answer: 436,
+    explanation: "Un campo de baloncesto NBA tiene 436 metros cuadrados (28.65 metros × 15.24 metros).",
+    category: "Matemáticas"
+  },
+  {
+    question: "¿Cuántos grados suman los ángulos internos de un pentadecágono?",
+    answer: 2340,
+    explanation: "Los ángulos internos de un pentadecágono suman 2,340 grados (15 lados × 156 grados cada uno).",
+    category: "Matemáticas"
+  },
+  {
+    question: "¿Cuántos números triangulares hay entre 1 y 10,000?",
+    answer: 140,
+    explanation: "Entre 1 y 10,000 hay 140 números triangulares, siendo el último 9,940.",
+    category: "Matemáticas"
+  },
+  {
+    question: "¿Cuántos metros cúbicos tiene una piscina olímpica estándar?",
+    answer: 2500,
+    explanation: "Una piscina olímpica estándar tiene un volumen de 2,500 metros cúbicos (50 metros × 25 metros × 2 metros).",
+    category: "Matemáticas"
+  },
+  {
+    question: "¿Cuántos grados suman los ángulos internos de un icoságono?",
+    answer: 3240,
+    explanation: "Los ángulos internos de un icoságono suman 3,240 grados (20 lados × 162 grados cada uno).",
     category: "Matemáticas"
   },
   // NUEVAS PREGUNTAS - DEPORTES
   {
-    question: "¿Cuántas ligas tiene el equipo que ganó la Liga 1 tailandesa en 2024?",
-    answer: 18,
-    explanation: "El equipo que ganó la Liga 1 tailandesa en 2024 tiene 18 ligas en su palmarés total.",
+    question: "¿Cuántas ligas tiene el equipo que ganó la Liga 1 tailandesa de futbol en 2024?",
+    answer: 4,
+    explanation: "El equipo que ganó la Liga 1 tailandesa en 2024 tiene 4 ligas en su palmarés total.",
+    category: "Deportes"
+  },
+  // NUEVAS PREGUNTAS ADICIONALES - DEPORTES
+  {
+    question: "¿Cuántos goles marcó Pelé en su carrera profesional oficial?",
+    answer: 1283,
+    explanation: "Pelé marcó 1,283 goles en su carrera profesional oficial, siendo el máximo goleador de la historia del fútbol.",
     category: "Deportes"
   },
   {
-    question: "¿Cuántos jugadores hay en un equipo de baloncesto en la cancha?",
-    answer: 5,
-    explanation: "En baloncesto, cada equipo tiene 5 jugadores en la cancha durante el juego.",
+    question: "¿Cuántos puntos anotó Michael Jordan en su carrera en la NBA?",
+    answer: 32292,
+    explanation: "Michael Jordan anotó 32,292 puntos en su carrera en la NBA, siendo uno de los máximos anotadores de la historia.",
     category: "Deportes"
   },
   {
-    question: "¿Cuántos minutos dura un partido de fútbol reglamentario?",
-    answer: 90,
-    explanation: "Un partido de fútbol reglamentario dura 90 minutos, divididos en dos tiempos de 45 minutos.",
+    question: "¿Cuántos Grand Slams ganó Roger Federer en su carrera?",
+    answer: 20,
+    explanation: "Roger Federer ganó 20 Grand Slams en su carrera, siendo uno de los tenistas más exitosos de la historia.",
     category: "Deportes"
   },
   {
-    question: "¿Cuántos sets se necesitan para ganar un partido de tenis en Grand Slam?",
-    answer: 3,
-    explanation: "En los torneos de Grand Slam, se necesitan 3 sets para ganar un partido (excepto en el Abierto de Australia que puede requerir 2).",
+    question: "¿Cuántos campeonatos de Fórmula 1 ganó Lewis Hamilton hasta 2024?",
+    answer: 7,
+    explanation: "Lewis Hamilton ha ganado 7 campeonatos de Fórmula 1 hasta 2024, igualando el récord de Michael Schumacher.",
     category: "Deportes"
   },
   {
-    question: "¿Cuántos jugadores hay en un equipo de voleibol en la cancha?",
-    answer: 6,
-    explanation: "En voleibol, cada equipo tiene 6 jugadores en la cancha durante el juego.",
+    question: "¿Cuántos metros de altura saltó Javier Sotomayor en su récord mundial?",
+    answer: 2,
+    explanation: "Javier Sotomayor saltó 2.45 metros en su récord mundial de salto de altura, establecido en 1993.",
     category: "Deportes"
   },
   {
-    question: "¿Cuántos puntos vale un touchdown en fútbol americano?",
-    answer: 6,
-    explanation: "Un touchdown en fútbol americano vale 6 puntos.",
-    category: "Deportes"
-  },
-  {
-    question: "¿Cuántos jugadores hay en un equipo de béisbol en el campo?",
+    question: "¿Cuántos segundos tardó Usain Bolt en correr 100 metros en su récord mundial?",
     answer: 9,
-    explanation: "En béisbol, cada equipo tiene 9 jugadores en el campo durante el juego.",
+    explanation: "Usain Bolt tardó 9.58 segundos en correr 100 metros en su récord mundial, establecido en 2009.",
     category: "Deportes"
   },
   {
-    question: "¿Cuántos minutos dura un cuarto en baloncesto NBA?",
-    answer: 12,
-    explanation: "En la NBA, cada cuarto dura 12 minutos, con 4 cuartos por partido.",
+    question: "¿Cuántos puntos anotó Kobe Bryant en su último partido en la NBA?",
+    answer: 60,
+    explanation: "Kobe Bryant anotó 60 puntos en su último partido en la NBA, el 13 de abril de 2016 contra Utah Jazz.",
     category: "Deportes"
   },
   {
-    question: "¿Cuántos jugadores hay en un equipo de hockey sobre hielo en la pista?",
+    question: "¿Cuántos Grand Slams ganó Rafael Nadal hasta 2024?",
+    answer: 22,
+    explanation: "Rafael Nadal ha ganado 22 Grand Slams hasta 2024, siendo el tenista con más títulos de Grand Slam en la historia.",
+    category: "Deportes"
+  },
+  {
+    question: "¿Cuántos goles marcó Lionel Messi en su carrera hasta 2024?",
+    answer: 821,
+    explanation: "Lionel Messi ha marcado 821 goles en su carrera hasta 2024, siendo uno de los máximos goleadores de la historia.",
+    category: "Deportes"
+  },
+  {
+    question: "¿Cuántos campeonatos de la NBA ganó Michael Jordan?",
     answer: 6,
-    explanation: "En hockey sobre hielo, cada equipo tiene 6 jugadores en la pista durante el juego.",
-    category: "Deportes"
-  },
-  {
-    question: "¿Cuántos puntos vale un gol en fútbol?",
-    answer: 1,
-    explanation: "Un gol en fútbol vale 1 punto, siendo la forma de anotación principal del deporte.",
+    explanation: "Michael Jordan ganó 6 campeonatos de la NBA, todos con los Chicago Bulls en dos periodos de tres títulos consecutivos.",
     category: "Deportes"
   },
   // NUEVAS PREGUNTAS - DEMOGRAFÍA
@@ -370,6 +591,67 @@ export const questions: Question[] = [
     question: "¿Cuántos millones de personas viven en Argentina?",
     answer: 45,
     explanation: "Argentina tiene aproximadamente 45 millones de habitantes.",
+    category: "Demografía"
+  },
+  // NUEVAS PREGUNTAS ADICIONALES - DEMOGRAFÍA
+  {
+    question: "¿Cuántos millones de personas viven en Nigeria?",
+    answer: 223,
+    explanation: "Nigeria tiene aproximadamente 223 millones de habitantes, siendo el país más poblado de África.",
+    category: "Demografía"
+  },
+  {
+    question: "¿Cuántos años es la esperanza de vida promedio en el Vaticano?",
+    answer: 81,
+    explanation: "El Vaticano tiene una esperanza de vida promedio de 81 años, una de las más altas del mundo.",
+    category: "Demografía"
+  },
+  {
+    question: "¿Cuántos millones de personas viven en Pakistán?",
+    answer: 240,
+    explanation: "Pakistán tiene aproximadamente 240 millones de habitantes, siendo el quinto país más poblado del mundo.",
+    category: "Demografía"
+  },
+  {
+    question: "¿Cuántos años es la edad promedio de maternidad en Italia?",
+    answer: 31,
+    explanation: "En Italia, la edad promedio para tener el primer hijo es de 31 años.",
+    category: "Demografía"
+  },
+  {
+    question: "¿Cuántos millones de personas viven en Bangladesh?",
+    answer: 169,
+    explanation: "Bangladesh tiene aproximadamente 169 millones de habitantes, siendo uno de los países más densamente poblados del mundo.",
+    category: "Demografía"
+  },
+  {
+    question: "¿Cuántos años es la edad promedio de jubilación en Francia?",
+    answer: 62,
+    explanation: "En Francia, la edad promedio de jubilación es de 62 años.",
+    category: "Demografía"
+  },
+  {
+    question: "¿Cuántos millones de personas viven en Rusia?",
+    answer: 144,
+    explanation: "Rusia tiene aproximadamente 144 millones de habitantes, siendo el país más grande del mundo por territorio.",
+    category: "Demografía"
+  },
+  {
+    question: "¿Cuántos años es la edad promedio de matrimonio en Suecia?",
+    answer: 34,
+    explanation: "En Suecia, la edad promedio para contraer matrimonio es de 34 años.",
+    category: "Demografía"
+  },
+  {
+    question: "¿Cuántos millones de personas viven en México?",
+    answer: 128,
+    explanation: "México tiene aproximadamente 128 millones de habitantes, siendo el país hispanohablante más poblado del mundo.",
+    category: "Demografía"
+  },
+  {
+    question: "¿Cuántos años es la esperanza de vida promedio en Suiza?",
+    answer: 83,
+    explanation: "Suiza tiene una esperanza de vida promedio de 83 años, una de las más altas del mundo.",
     category: "Demografía"
   }
 ]; 
