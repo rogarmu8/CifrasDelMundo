@@ -111,6 +111,7 @@ h1 {
     padding: 20px;
     text-align: center;
     margin-bottom: 5vh;
+    position: relative;
 }
 
 .button-group {
@@ -336,11 +337,16 @@ footer {
 }
 
 .mobile-hint {
-    margin-top: 10px;
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    right: 0;
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
     animation: fadeInOut 3s ease;
+    white-space: nowrap;
+    z-index: 10;
 }
 
 @keyframes fadeInOut {
