@@ -10,12 +10,14 @@ const questionsSeenElem = document.getElementById('questionsSeen');
 const mainBtn = document.getElementById('mainBtn');
 const btnLabel = document.getElementById('btnLabel');
 const categoryDisplay = document.getElementById('categoryDisplay');
+const mobileHint = document.getElementById('mobileHint');
 
 const HOLD_TIME = 600; // ms to hold for action
 let holdTimeout = null;
 let state = 'respuesta'; // or 'siguiente'
 let isClickable = true;
 const CLICK_DEBOUNCE = 500; // ms to prevent double clicks
+let isMobile = false;
 
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -77,6 +79,24 @@ function displayCategory(category) {
   categoryDisplay.className = 'category-display category-' + normalized;
 }
 
+// Detect mobile device
+function detectMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+function showMobileHint() {
+    if (isMobile) {
+        mobileHint.style.display = 'block';
+        mobileHint.style.animation = 'none';
+        mobileHint.offsetHeight; // Trigger reflow
+        mobileHint.style.animation = 'fadeInOut 3s ease';
+        
+        setTimeout(() => {
+            mobileHint.style.display = 'none';
+        }, 3000);
+    }
+}
+
 // Hold-to-show for Respuesta, Hold-to-next for Siguiente
 function handleHoldStart(e) {
   e.preventDefault();
@@ -110,6 +130,11 @@ function handleClick(e) {
     showNextQuestion();
   }
   
+  // Show mobile hint if on mobile
+  if (isMobile) {
+    showMobileHint();
+  }
+  
   setTimeout(() => {
     mainBtn.classList.remove('clicked');
     isClickable = true;
@@ -126,5 +151,8 @@ mainBtn.addEventListener('click', handleClick);
 mainBtn.addEventListener('touchstart', handleHoldStart);
 mainBtn.addEventListener('touchend', handleHoldEnd);
 
-// Start game
-window.onload = initGame; 
+// Initialize mobile detection
+window.onload = function() {
+    isMobile = detectMobile();
+    initGame();
+}; 
