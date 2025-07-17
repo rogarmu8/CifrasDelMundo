@@ -9,6 +9,7 @@ const answerExplanation = document.getElementById('answerExplanation');
 const questionsSeenElem = document.getElementById('questionsSeen');
 const mainBtn = document.getElementById('mainBtn');
 const btnLabel = document.getElementById('btnLabel');
+const categoryDisplay = document.getElementById('categoryDisplay');
 
 const HOLD_TIME = 600; // ms to hold for action
 let holdTimeout = null;
@@ -52,6 +53,9 @@ function showNextQuestion() {
   mainBtn.classList.remove('holding');
   mainBtn.classList.add('reset-progress');
   setTimeout(() => mainBtn.classList.remove('reset-progress'), 10);
+  
+  // Display category
+  displayCategory(currentQuestion.category);
 }
 
 function showAnswer() {
@@ -64,6 +68,13 @@ function showAnswer() {
   mainBtn.classList.remove('holding');
   mainBtn.classList.add('reset-progress');
   setTimeout(() => mainBtn.classList.remove('reset-progress'), 10);
+}
+
+function displayCategory(category) {
+  // Remove accents and convert to lowercase
+  const normalized = category.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '').toLowerCase();
+  categoryDisplay.textContent = category;
+  categoryDisplay.className = 'category-display category-' + normalized;
 }
 
 // Hold-to-show for Respuesta, Hold-to-next for Siguiente
