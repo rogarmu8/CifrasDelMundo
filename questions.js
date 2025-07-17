@@ -80,11 +80,6 @@ const questions = [
       explanation: "Estudios en adultos menores de 60 años muestran que el riesgo de mortalidad se nivela al alcanzar los 8 000–10 000 pasos diarios."
     },
     {
-      question: "¿Y en adultos mayores (≥ 60 años)?",
-      answer: "≈ 6 000–8 000 pasos",
-      explanation: "En personas mayores de 60 años, el riesgo de mortalidad se estabiliza alrededor de los 6 000–8 000 pasos diarios."
-    },
-    {
       question: "¿Cuántos pares de zapatos produjo México en 2022?",
       answer: "≈ 203 millones",
       explanation: "La producción en 2022 fue de aproximadamente 203 millones de pares de calzado."
