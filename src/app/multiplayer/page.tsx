@@ -9,7 +9,7 @@ interface Player {
   name: string
   score: number
   isHost: boolean
-  currentAnswer?: number
+  currentAnswer?: string
   hasAnswered: boolean
 }
 
@@ -93,6 +93,8 @@ export default function Multiplayer() {
             // Always update room state for player changes
             if (hasPlayerChange) {
               console.log('Player change detected, updating room state')
+              console.log('Old players:', currentRoom.players)
+              console.log('New players:', updatedRoom.players)
               setCurrentRoom(updatedRoom)
               
               // Update current player state if player data changed
@@ -114,7 +116,7 @@ export default function Multiplayer() {
                 if (question) {
                   setCurrentQuestion(question)
                   // Reset player's answered state for new question but keep input
-                  setCurrentPlayer(prev => prev ? { ...prev, hasAnswered: false, currentAnswer: undefined } : null)
+                  setCurrentPlayer(prev => prev ? { ...prev, hasAnswered: false } : null)
                 }
               } else if (updatedRoom.game_state === 'showing-results') {
                 setCurrentQuestion(questions.find(q => q.question === updatedRoom.current_question_id) || null)
@@ -151,6 +153,10 @@ export default function Multiplayer() {
           console.log('=== DEBUG: POLLING CHECK ===')
           console.log('Room from database:', room)
           console.log('Players from database:', room.players)
+          console.log('Each player details:')
+          room.players.forEach((player: any) => {
+            console.log(`- ${player.name}: hasAnswered=${player.hasAnswered}, currentAnswer="${player.currentAnswer}" (type: ${typeof player.currentAnswer})`)
+          })
           
           const allAnswered = (room.players as Player[]).every((p: Player) => p.hasAnswered)
           console.log('All answered:', allAnswered)
@@ -272,23 +278,48 @@ export default function Multiplayer() {
         return { playerId: player.id, name: player.name, answer: 0, correct: false, points: 0 }
       }
 
-      const difference = Math.abs(player.currentAnswer - correctAnswer)
-      const isCorrect = difference === 0
-      
-      console.log(`Player ${player.name}: difference = ${difference}, isCorrect = ${isCorrect}`)
+      // Check for exact string match first (handles large numbers perfectly)
+      const isExactMatch = player.currentAnswer === correctAnswer.toString()
       
       let points = 0
-      if (isCorrect) {
+      let numericAnswer = 0
+      
+      if (isExactMatch) {
         points = 2
-        console.log(`Player ${player.name}: Exact match! +2 points`)
+        numericAnswer = correctAnswer
+        console.log(`Player ${player.name}: Exact string match! +2 points`)
       } else {
-        // Find the closest answer (handles decimals properly)
+        // For non-exact matches, try to convert to numbers for closest answer calculation
+        numericAnswer = parseFloat(player.currentAnswer)
+        if (isNaN(numericAnswer)) {
+          console.log(`Player ${player.name}: Invalid numeric answer`)
+          return { playerId: player.id, name: player.name, answer: 0, correct: false, points: 0 }
+        }
+
+        const difference = Math.abs(numericAnswer - correctAnswer)
+        
+        console.log(`Player ${player.name}: difference = ${difference}`)
+        
+        // Find all unique differences and sort them to determine ranking
         const allDifferences = currentRoom.players
           .filter(p => p.currentAnswer !== undefined && p.currentAnswer !== null)
-          .map(p => Math.abs(p.currentAnswer! - correctAnswer))
-        const minDifference = Math.min(...allDifferences)
-        console.log(`Player ${player.name}: allDifferences = ${allDifferences}, minDifference = ${minDifference}`)
+          .map(p => {
+            // Skip exact matches
+            if (p.currentAnswer === correctAnswer.toString()) {
+              return 0
+            }
+            const num = parseFloat(p.currentAnswer!)
+            return isNaN(num) ? Infinity : Math.abs(num - correctAnswer)
+          })
+          .filter(diff => diff !== 0) // Remove exact matches from closest calculation
         
+        // Sort differences to find the minimum (closest answer)
+        const sortedDifferences = Array.from(new Set(allDifferences)).sort((a, b) => a - b)
+        const minDifference = sortedDifferences[0] || Infinity
+        
+        console.log(`Player ${player.name}: allDifferences = ${allDifferences}, sortedDifferences = ${sortedDifferences}, minDifference = ${minDifference}`)
+        
+        // Check if this player's answer is among the closest answers
         if (Math.abs(difference - minDifference) < 0.0001) { // Use small epsilon for float comparison
           points = 1
           console.log(`Player ${player.name}: Closest answer! +1 point`)
@@ -300,8 +331,8 @@ export default function Multiplayer() {
       return {
         playerId: player.id,
         name: player.name,
-        answer: player.currentAnswer,
-        correct: isCorrect,
+        answer: numericAnswer,
+        correct: isExactMatch,
         points
       }
     })
@@ -353,23 +384,48 @@ export default function Multiplayer() {
         return { playerId: player.id, name: player.name, answer: 0, correct: false, points: 0 }
       }
 
-      const difference = Math.abs(player.currentAnswer - correctAnswer)
-      const isCorrect = difference === 0
-      
-      console.log(`Player ${player.name}: difference = ${difference}, isCorrect = ${isCorrect}`)
+      // Check for exact string match first (handles large numbers perfectly)
+      const isExactMatch = player.currentAnswer === correctAnswer.toString()
       
       let points = 0
-      if (isCorrect) {
+      let numericAnswer = 0
+      
+      if (isExactMatch) {
         points = 2
-        console.log(`Player ${player.name}: Exact match! +2 points`)
+        numericAnswer = correctAnswer
+        console.log(`Player ${player.name}: Exact string match! +2 points`)
       } else {
-        // Find the closest answer (handles decimals properly)
+        // For non-exact matches, try to convert to numbers for closest answer calculation
+        numericAnswer = parseFloat(player.currentAnswer)
+        if (isNaN(numericAnswer)) {
+          console.log(`Player ${player.name}: Invalid numeric answer`)
+          return { playerId: player.id, name: player.name, answer: 0, correct: false, points: 0 }
+        }
+
+        const difference = Math.abs(numericAnswer - correctAnswer)
+        
+        console.log(`Player ${player.name}: difference = ${difference}`)
+        
+        // Find all unique differences and sort them to determine ranking
         const allDifferences = roomData.players
           .filter(p => p.currentAnswer !== undefined && p.currentAnswer !== null)
-          .map(p => Math.abs(p.currentAnswer! - correctAnswer))
-        const minDifference = Math.min(...allDifferences)
-        console.log(`Player ${player.name}: allDifferences = ${allDifferences}, minDifference = ${minDifference}`)
+          .map(p => {
+            // Skip exact matches
+            if (p.currentAnswer === correctAnswer.toString()) {
+              return 0
+            }
+            const num = parseFloat(p.currentAnswer!)
+            return isNaN(num) ? Infinity : Math.abs(num - correctAnswer)
+          })
+          .filter(diff => diff !== 0) // Remove exact matches from closest calculation
         
+        // Sort differences to find the minimum (closest answer)
+        const sortedDifferences = Array.from(new Set(allDifferences)).sort((a, b) => a - b)
+        const minDifference = sortedDifferences[0] || Infinity
+        
+        console.log(`Player ${player.name}: allDifferences = ${allDifferences}, sortedDifferences = ${sortedDifferences}, minDifference = ${minDifference}`)
+        
+        // Check if this player's answer is among the closest answers
         if (Math.abs(difference - minDifference) < 0.0001) { // Use small epsilon for float comparison
           points = 1
           console.log(`Player ${player.name}: Closest answer! +1 point`)
@@ -381,8 +437,8 @@ export default function Multiplayer() {
       return {
         playerId: player.id,
         name: player.name,
-        answer: player.currentAnswer,
-        correct: isCorrect,
+        answer: numericAnswer,
+        correct: isExactMatch,
         points
       }
     })
@@ -539,7 +595,7 @@ export default function Multiplayer() {
 
     const updatedPlayers = currentRoom.players.map(p => 
       p.id === currentPlayer.id 
-        ? { ...p, currentAnswer: answer, hasAnswered: true }
+        ? { ...p, currentAnswer: answer.toString(), hasAnswered: true }
         : p
     )
 
@@ -556,7 +612,7 @@ export default function Multiplayer() {
       // Update local state
       const updatedRoom = { ...currentRoom, players: updatedPlayers }
       setCurrentRoom(updatedRoom)
-      setCurrentPlayer({ ...currentPlayer, currentAnswer: answer, hasAnswered: true })
+      setCurrentPlayer({ ...currentPlayer, currentAnswer: answer.toString(), hasAnswered: true })
 
       console.log('Answer submitted successfully')
 
@@ -568,13 +624,13 @@ export default function Multiplayer() {
   }
 
   const handleNumberInput = (num: number) => {
-    if (currentInput.length < 20) { // Limit to 20 digits
+    if (currentInput.length < 15) { // Limit to 15 digits
       setCurrentInput(prev => prev + num.toString())
     }
   }
 
   const handleDecimalPoint = () => {
-    if (!currentInput.includes('.') && currentInput.length < 19) {
+    if (!currentInput.includes('.') && currentInput.length < 14) {
       setCurrentInput(prev => prev + '.')
     }
   }

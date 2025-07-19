@@ -1102,7 +1102,7 @@ footer {
 }
 
 .results-row.current-player-row .cell.points.white {
-  color: #666;
+  color: #000000b1;
   font-weight: bold;
 }
 
@@ -1120,7 +1120,7 @@ footer {
 }
 
 .cell.points.white {
-  color: #666;
+  color: #000;
 }
 
 .cell.total {
