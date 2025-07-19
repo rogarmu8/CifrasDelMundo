@@ -4,7 +4,7 @@ export default function AboutPage() {
   return (
     <div className="container">
       <header>
-        <h1>Sobre CifrasDelMundo</h1>
+        <h1>Sobre cifrasdelmundo.com</h1>
       </header>
       
       <main style={{ 
@@ -16,7 +16,7 @@ export default function AboutPage() {
       }}>
         <h2>¿Qué es Cifras Del Mundo?</h2>
         <p style={{ margin: '20px 0', lineHeight: '1.6' }}>
-          Cifras Del Mundo es un juego de preguntas con respuesta numérica. El juego fue creado en 3 días durante un viaje de colegas a Santander con el objetivo de beber.
+          Cifras Del Mundo es un juego de preguntas con respuesta numérica. El juego fue creado en 3 días durante un viaje de colegas a Santander con el objetivo de beber 😈.
         </p>
         
         <h3>¿Cómo jugar?</h3>
@@ -34,7 +34,7 @@ export default function AboutPage() {
         
         <h3>Créditos</h3>
         <p style={{ margin: '20px 0', lineHeight: '1.6' }}>
-          Javi, Cholo, Agra, Solla, Ingelmo, Domingo, Rómulo.
+          Javi, Cholo, <span style={{textDecoration: 'line-through'}}>Agra</span>, Solla, Ingelmo, Domingo, Rómulo.
         </p>
         
         <Link href="/" style={{
