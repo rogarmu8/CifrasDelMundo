@@ -563,6 +563,43 @@ export default function Multiplayer() {
     }
   }, [])
 
+  // Cleanup function to delete empty rooms and old rooms
+  const cleanupOldRooms = async () => {
+    try {
+      // Delete empty rooms
+      const { error: emptyError } = await supabase
+        .from('rooms')
+        .delete()
+        .eq('players', '[]')
+      
+      if (emptyError) {
+        console.error('Error deleting empty rooms:', emptyError)
+      }
+
+      // Delete rooms older than 2 days
+      const twoDaysAgo = new Date()
+      twoDaysAgo.setDate(twoDaysAgo.getDate() - 2)
+      
+      const { error: oldError } = await supabase
+        .from('rooms')
+        .delete()
+        .lt('created_at', twoDaysAgo.toISOString())
+      
+      if (oldError) {
+        console.error('Error deleting old rooms:', oldError)
+      }
+
+      console.log('Room cleanup completed')
+    } catch (error) {
+      console.error('Error in room cleanup:', error)
+    }
+  }
+
+  // Run cleanup when component mounts
+  useEffect(() => {
+    cleanupOldRooms()
+  }, [])
+
   if (currentRoom) {
     return (
       <div className="container">
