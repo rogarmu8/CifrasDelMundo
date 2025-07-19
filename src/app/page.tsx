@@ -236,10 +236,10 @@ export default function Home() {
       </main>
       
       <footer>
+        <a href="/multiplayer" className="multiplayer-link">Multijugador</a>
         <p>
           ¿Cuánto sabes sobre el mundo en números? 
           <a href="/about" className="about-link">Sobre el proyecto</a>
-          <a href="/multiplayer" className="multiplayer-link">Multijugador</a>
         </p>
       </footer>
     </div>
