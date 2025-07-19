@@ -39,6 +39,7 @@ export default function Multiplayer() {
   const [currentInput, setCurrentInput] = useState('')
   const [copiedText, setCopiedText] = useState('')
   const [activeTab, setActiveTab] = useState<'create' | 'join'>('create')
+  const [nameError, setNameError] = useState(false)
   
   const timeRef = useRef<NodeJS.Timeout | null>(null)
 
@@ -473,7 +474,10 @@ export default function Multiplayer() {
   }
 
   const createRoom = async () => {
-    if (!name.trim()) return
+    if (!name.trim()) {
+      setNameError(true);
+      return;
+    }
 
     const roomId = generateRoomId()
     const player: Player = {
@@ -509,13 +513,17 @@ export default function Multiplayer() {
       setCurrentRoom(room)
       setCurrentPlayer(player)
       setCurrentInput('')
+      setNameError(false);
     } catch (error) {
       console.error('Error creating room:', error)
     }
   }
 
   const joinRoom = async () => {
-    if (!name.trim() || !joinRoomId.trim()) return
+    if (!name.trim() || !joinRoomId.trim()) {
+      setNameError(true);
+      return;
+    }
 
     const player: Player = {
       id: crypto.randomUUID(),
@@ -554,6 +562,7 @@ export default function Multiplayer() {
       setCurrentRoom({ ...room, players: updatedPlayers })
       setCurrentPlayer(player)
       setCurrentInput('')
+      setNameError(false);
     } catch (error) {
       console.error('Error joining room:', error)
     }
@@ -994,10 +1003,15 @@ export default function Multiplayer() {
                 id="playerName"
                 type="text"
                 value={name}
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) => {
+                  setName(e.target.value);
+                  if (nameError) setNameError(false);
+                }}
                 placeholder="Nombre"
                 required
+                className={nameError ? 'error' : ''}
               />
+              {nameError && <p className="error-message">El nombre es requerido</p>}
             </div>
           </div>
           
