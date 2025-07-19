@@ -148,11 +148,18 @@ export default function Multiplayer() {
           .single()
 
         if (!error && room) {
+          console.log('=== DEBUG: POLLING CHECK ===')
+          console.log('Room from database:', room)
+          console.log('Players from database:', room.players)
+          
           const allAnswered = (room.players as Player[]).every((p: Player) => p.hasAnswered)
+          console.log('All answered:', allAnswered)
+          
           if (allAnswered) {
             console.log('All players have answered, showing results immediately')
-            // All players answered - show results immediately
-            await showResultsForAllPlayers()
+            // Use the fresh room data from database for results
+            const freshRoom = room as Room
+            await showResultsForAllPlayersWithData(freshRoom)
             clearInterval(pollInterval)
           }
         }
@@ -253,25 +260,40 @@ export default function Multiplayer() {
     if (!currentRoom || !currentPlayer?.isHost || !currentQuestion) return
 
     const correctAnswer = currentQuestion.answer
+    console.log('=== DEBUG: SHOWING RESULTS ===')
+    console.log('Correct answer:', correctAnswer)
+    console.log('All players:', currentRoom.players)
+    
     const playerResults = currentRoom.players.map(player => {
-      if (!player.currentAnswer) {
+      console.log(`Player ${player.name}: currentAnswer = ${player.currentAnswer}, type = ${typeof player.currentAnswer}`)
+      
+      if (player.currentAnswer === undefined || player.currentAnswer === null) {
+        console.log(`Player ${player.name}: No answer provided`)
         return { playerId: player.id, name: player.name, answer: 0, correct: false, points: 0 }
       }
 
       const difference = Math.abs(player.currentAnswer - correctAnswer)
       const isCorrect = difference === 0
       
+      console.log(`Player ${player.name}: difference = ${difference}, isCorrect = ${isCorrect}`)
+      
       let points = 0
       if (isCorrect) {
         points = 2
+        console.log(`Player ${player.name}: Exact match! +2 points`)
       } else {
-        // Find the closest answer
+        // Find the closest answer (handles decimals properly)
         const allDifferences = currentRoom.players
-          .filter(p => p.currentAnswer !== undefined)
+          .filter(p => p.currentAnswer !== undefined && p.currentAnswer !== null)
           .map(p => Math.abs(p.currentAnswer! - correctAnswer))
         const minDifference = Math.min(...allDifferences)
-        if (difference === minDifference) {
+        console.log(`Player ${player.name}: allDifferences = ${allDifferences}, minDifference = ${minDifference}`)
+        
+        if (Math.abs(difference - minDifference) < 0.0001) { // Use small epsilon for float comparison
           points = 1
+          console.log(`Player ${player.name}: Closest answer! +1 point`)
+        } else {
+          console.log(`Player ${player.name}: Not closest, +0 points`)
         }
       }
 
@@ -283,6 +305,8 @@ export default function Multiplayer() {
         points
       }
     })
+
+    console.log('Final results:', playerResults)
 
     // Update scores
     const updatedPlayers = currentRoom.players.map(player => {
@@ -305,6 +329,87 @@ export default function Multiplayer() {
         players: updatedPlayers
       })
       .eq('id', currentRoom.id)
+
+    if (!error) {
+      // Wait for host to press "Siguiente" button
+    }
+  }
+
+  // Function to show results using provided room data
+  const showResultsForAllPlayersWithData = async (roomData: Room) => {
+    if (!currentPlayer?.isHost || !currentQuestion) return
+
+    const correctAnswer = currentQuestion.answer
+    console.log('=== DEBUG: SHOWING RESULTS WITH FRESH DATA ===')
+    console.log('Correct answer:', correctAnswer)
+    console.log('Room data:', roomData)
+    console.log('All players from fresh data:', roomData.players)
+    
+    const playerResults = roomData.players.map(player => {
+      console.log(`Player ${player.name}: currentAnswer = ${player.currentAnswer}, type = ${typeof player.currentAnswer}`)
+      
+      if (player.currentAnswer === undefined || player.currentAnswer === null) {
+        console.log(`Player ${player.name}: No answer provided`)
+        return { playerId: player.id, name: player.name, answer: 0, correct: false, points: 0 }
+      }
+
+      const difference = Math.abs(player.currentAnswer - correctAnswer)
+      const isCorrect = difference === 0
+      
+      console.log(`Player ${player.name}: difference = ${difference}, isCorrect = ${isCorrect}`)
+      
+      let points = 0
+      if (isCorrect) {
+        points = 2
+        console.log(`Player ${player.name}: Exact match! +2 points`)
+      } else {
+        // Find the closest answer (handles decimals properly)
+        const allDifferences = roomData.players
+          .filter(p => p.currentAnswer !== undefined && p.currentAnswer !== null)
+          .map(p => Math.abs(p.currentAnswer! - correctAnswer))
+        const minDifference = Math.min(...allDifferences)
+        console.log(`Player ${player.name}: allDifferences = ${allDifferences}, minDifference = ${minDifference}`)
+        
+        if (Math.abs(difference - minDifference) < 0.0001) { // Use small epsilon for float comparison
+          points = 1
+          console.log(`Player ${player.name}: Closest answer! +1 point`)
+        } else {
+          console.log(`Player ${player.name}: Not closest, +0 points`)
+        }
+      }
+
+      return {
+        playerId: player.id,
+        name: player.name,
+        answer: player.currentAnswer,
+        correct: isCorrect,
+        points
+      }
+    })
+
+    console.log('Final results:', playerResults)
+
+    // Update scores
+    const updatedPlayers = roomData.players.map(player => {
+      const result = playerResults.find(r => r.playerId === player.id)
+      return {
+        ...player,
+        score: player.score + (result?.points || 0),
+        currentAnswer: undefined,
+        hasAnswered: false
+      }
+    })
+
+    // Host updates the database with results and new scores
+    const { error } = await supabase
+      .from('rooms')
+      .update({ 
+        game_state: 'showing-results',
+        show_results: true,
+        results: playerResults,
+        players: updatedPlayers
+      })
+      .eq('id', roomData.id)
 
     if (!error) {
       // Wait for host to press "Siguiente" button
@@ -427,11 +532,18 @@ export default function Multiplayer() {
   const submitAnswer = async (answer: number) => {
     if (!currentRoom || !currentPlayer || currentRoom.game_state !== 'playing') return
 
+    console.log('=== DEBUG: SUBMITTING ANSWER ===')
+    console.log('Player:', currentPlayer.name)
+    console.log('Answer:', answer, 'Type:', typeof answer)
+    console.log('Current room players before update:', currentRoom.players)
+
     const updatedPlayers = currentRoom.players.map(p => 
       p.id === currentPlayer.id 
         ? { ...p, currentAnswer: answer, hasAnswered: true }
         : p
     )
+
+    console.log('Updated players:', updatedPlayers)
 
     try {
       const { error } = await supabase
@@ -446,6 +558,8 @@ export default function Multiplayer() {
       setCurrentRoom(updatedRoom)
       setCurrentPlayer({ ...currentPlayer, currentAnswer: answer, hasAnswered: true })
 
+      console.log('Answer submitted successfully')
+
       // The host polling mechanism will check if all players have answered
       // and show results immediately when they do
     } catch (error) {
@@ -454,8 +568,20 @@ export default function Multiplayer() {
   }
 
   const handleNumberInput = (num: number) => {
-    if (currentInput.length < 10) { // Limit to 10 digits
+    if (currentInput.length < 20) { // Limit to 20 digits
       setCurrentInput(prev => prev + num.toString())
+    }
+  }
+
+  const handleDecimalPoint = () => {
+    if (!currentInput.includes('.') && currentInput.length < 19) {
+      setCurrentInput(prev => prev + '.')
+    }
+  }
+
+  const handleMinusSign = () => {
+    if (currentInput.length === 0) {
+      setCurrentInput('-')
     }
   }
 
@@ -465,7 +591,7 @@ export default function Multiplayer() {
 
   const handleSubmitAnswer = () => {
     if (currentInput && !currentPlayer?.hasAnswered && currentRoom?.game_state === 'playing') {
-      const answer = parseInt(currentInput)
+      const answer = parseFloat(currentInput)
       if (!isNaN(answer)) {
         submitAnswer(answer)
       }
@@ -674,7 +800,12 @@ export default function Multiplayer() {
               <div className="numeric-keyboard">
                 <div className="input-display">
                   <span className="input-label">Tu respuesta:</span>
-                  <div className="input-value">{currentPlayer?.hasAnswered ? currentPlayer.currentAnswer : (currentInput || '0')}</div>
+                  <div className="input-value">
+                    {currentPlayer?.hasAnswered 
+                      ? currentPlayer.currentAnswer 
+                      : (currentInput || '0')
+                    }
+                  </div>
                 </div>
                 <div className="keyboard-row">
                   {[1, 2, 3, 4, 5].map(num => (
@@ -701,6 +832,20 @@ export default function Multiplayer() {
                   ))}
                 </div>
                 <div className="keyboard-row">
+                  <button 
+                    onClick={handleMinusSign} 
+                    className="keyboard-key minus-key"
+                    disabled={currentPlayer?.hasAnswered}
+                  >
+                    −
+                  </button>
+                  <button 
+                    onClick={handleDecimalPoint} 
+                    className="keyboard-key decimal-key"
+                    disabled={currentPlayer?.hasAnswered}
+                  >
+                    .
+                  </button>
                   <button 
                     onClick={handleBackspace} 
                     className="keyboard-key backspace-key"

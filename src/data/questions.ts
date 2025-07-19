@@ -253,31 +253,13 @@ export const questions: Question[] = [
   // NUEVAS PREGUNTAS - HISTORIA
   {
     question: "¿En qué año se fundó la ciudad de Roma?",
-    answer: 753,
+    answer: -753,
     explanation: "Según la tradición romana, la ciudad de Roma fue fundada en el año 753 a.C. por Rómulo y Remo.",
     category: "Historia"
   },
   {
-    question: "¿En qué año se descubrió América por Cristóbal Colón?",
-    answer: 1492,
-    explanation: "Cristóbal Colón llegó a América el 12 de octubre de 1492, desembarcando en la isla de Guanahaní.",
-    category: "Historia"
-  },
-  {
-    question: "¿En qué año comenzó la Primera Guerra Mundial?",
-    answer: 1914,
-    explanation: "La Primera Guerra Mundial comenzó en 1914 con el asesinato del Archiduque Francisco Fernando de Austria.",
-    category: "Historia"
-  },
-  {
-    question: "¿En qué año terminó la Segunda Guerra Mundial?",
-    answer: 1945,
-    explanation: "La Segunda Guerra Mundial terminó en 1945 con la rendición de Alemania en mayo y Japón en septiembre.",
-    category: "Historia"
-  },
-  {
     question: "¿En qué año se construyó la Gran Muralla China?",
-    answer: 214,
+    answer: -214,
     explanation: "La construcción de la Gran Muralla China comenzó en el año 214 a.C. durante la dinastía Qin.",
     category: "Historia"
   },
@@ -326,13 +308,13 @@ export const questions: Question[] = [
   },
   {
     question: "¿En qué año se construyó la primera pirámide de Egipto, la Pirámide de Djoser?",
-    answer: 2630,
+    answer: -2630,
     explanation: "La Pirámide de Djoser, la primera pirámide de Egipto, fue construida alrededor del año 2630 a.C.",
     category: "Historia"
   },
   {
     question: "¿En qué año se fundó la ciudad de Alejandría?",
-    answer: 331,
+    answer: -331,
     explanation: "La ciudad de Alejandría fue fundada en el año 331 a.C. por Alejandro Magno en Egipto.",
     category: "Historia"
   },
@@ -344,31 +326,31 @@ export const questions: Question[] = [
   },
   {
     question: "¿En qué año se fundó la ciudad de Cartago?",
-    answer: 814,
+    answer: -814,
     explanation: "La ciudad de Cartago fue fundada en el año 814 a.C. por colonos fenicios de Tiro.",
     category: "Historia"
   },
   {
     question: "¿En qué año se construyó la Gran Pirámide de Giza?",
-    answer: 2560,
+    answer: -2560,
     explanation: "La Gran Pirámide de Giza fue construida alrededor del año 2560 a.C. durante el reinado del faraón Keops.",
     category: "Historia"
   },
   {
     question: "¿En qué año se fundó la ciudad de Babilonia?",
-    answer: 1894,
+    answer: -1894,
     explanation: "La ciudad de Babilonia fue fundada en el año 1894 a.C. por el rey amorreo Sumu-abum.",
     category: "Historia"
   },
   {
     question: "¿En qué año se construyó el Partenón de Atenas?",
-    answer: 438,
+    answer: -438,
     explanation: "El Partenón de Atenas fue completado en el año 438 a.C. durante el gobierno de Pericles.",
     category: "Historia"
   },
   {
     question: "¿En qué año se fundó la ciudad de Pompeya?",
-    answer: 600,
+    answer: -600,
     explanation: "La ciudad de Pompeya fue fundada alrededor del año 600 a.C. por los oscos en la región de Campania.",
     category: "Historia"
   },
@@ -420,12 +402,6 @@ export const questions: Question[] = [
     question: "¿Cuántos grados suman los ángulos internos de un dodecágono?",
     answer: 1800,
     explanation: "Los ángulos internos de un dodecágono suman 1,800 grados (12 lados × 150 grados cada uno).",
-    category: "Matemáticas"
-  },
-  {
-    question: "¿Cuántos metros cúbicos tiene un cubo de Rubik estándar?",
-    answer: 0,
-    explanation: "Un cubo de Rubik estándar tiene un volumen de 0.000125 metros cúbicos (5.7 cm de lado).",
     category: "Matemáticas"
   },
   {
@@ -498,13 +474,13 @@ export const questions: Question[] = [
   },
   {
     question: "¿Cuántos metros de altura saltó Javier Sotomayor en su récord mundial?",
-    answer: 2,
+    answer: 2.45,
     explanation: "Javier Sotomayor saltó 2.45 metros en su récord mundial de salto de altura, establecido en 1993.",
     category: "Deportes"
   },
   {
     question: "¿Cuántos segundos tardó Usain Bolt en correr 100 metros en su récord mundial?",
-    answer: 9,
+    answer: 9.58,
     explanation: "Usain Bolt tardó 9.58 segundos en correr 100 metros en su récord mundial, establecido en 2009.",
     category: "Deportes"
   },
@@ -535,7 +511,7 @@ export const questions: Question[] = [
   // NUEVAS PREGUNTAS - DEMOGRAFÍA
   {
     question: "¿Cuántos litros de Coca-Cola bebe un peruano en promedio en un año?",
-    answer: 89,
+    answer: 30,
     explanation: "Un peruano consume en promedio 89 litros de Coca-Cola al año, según estadísticas de consumo per cápita.",
     category: "Demografía"
   },
@@ -552,8 +528,8 @@ export const questions: Question[] = [
     category: "Demografía"
   },
   {
-    question: "¿Cuántos millones de personas viven en la India?",
-    answer: 1400,
+    question: "¿Cuántas personas viven en la India?",
+    answer: 1400000000,
     explanation: "La India tiene aproximadamente 1,400 millones de habitantes, siendo el país más poblado del mundo.",
     category: "Demografía"
   },
@@ -564,8 +540,8 @@ export const questions: Question[] = [
     category: "Demografía"
   },
   {
-    question: "¿Cuántos millones de personas viven en la Ciudad de México?",
-    answer: 22,
+    question: "¿Cuántas personas viven en la Ciudad de México?",
+    answer: 22000000,
     explanation: "La Ciudad de México tiene aproximadamente 22 millones de habitantes en su área metropolitana.",
     category: "Demografía"
   },
@@ -576,8 +552,8 @@ export const questions: Question[] = [
     category: "Demografía"
   },
   {
-    question: "¿Cuántos millones de personas viven en Brasil?",
-    answer: 214,
+    question: "¿Cuántas personas viven en Brasil?",
+    answer: 214000000,
     explanation: "Brasil tiene aproximadamente 214 millones de habitantes, siendo el país más poblado de América del Sur.",
     category: "Demografía"
   },
@@ -588,15 +564,15 @@ export const questions: Question[] = [
     category: "Demografía"
   },
   {
-    question: "¿Cuántos millones de personas viven en Argentina?",
-    answer: 45,
+    question: "¿Cuántas personas viven en Argentina?",
+    answer: 45000000,
     explanation: "Argentina tiene aproximadamente 45 millones de habitantes.",
     category: "Demografía"
   },
   // NUEVAS PREGUNTAS ADICIONALES - DEMOGRAFÍA
   {
-    question: "¿Cuántos millones de personas viven en Nigeria?",
-    answer: 223,
+    question: "¿Cuántas personas viven en Nigeria?",
+    answer: 223000000,
     explanation: "Nigeria tiene aproximadamente 223 millones de habitantes, siendo el país más poblado de África.",
     category: "Demografía"
   },
@@ -607,8 +583,8 @@ export const questions: Question[] = [
     category: "Demografía"
   },
   {
-    question: "¿Cuántos millones de personas viven en Pakistán?",
-    answer: 240,
+    question: "¿Cuántas personas viven en Pakistán?",
+    answer: 240000000,
     explanation: "Pakistán tiene aproximadamente 240 millones de habitantes, siendo el quinto país más poblado del mundo.",
     category: "Demografía"
   },
@@ -619,8 +595,8 @@ export const questions: Question[] = [
     category: "Demografía"
   },
   {
-    question: "¿Cuántos millones de personas viven en Bangladesh?",
-    answer: 169,
+    question: "¿Cuántas personas viven en Bangladesh?",
+    answer: 169000000,
     explanation: "Bangladesh tiene aproximadamente 169 millones de habitantes, siendo uno de los países más densamente poblados del mundo.",
     category: "Demografía"
   },
@@ -631,8 +607,8 @@ export const questions: Question[] = [
     category: "Demografía"
   },
   {
-    question: "¿Cuántos millones de personas viven en Rusia?",
-    answer: 144,
+    question: "¿Cuántas personas viven en Rusia?",
+    answer: 144000000,
     explanation: "Rusia tiene aproximadamente 144 millones de habitantes, siendo el país más grande del mundo por territorio.",
     category: "Demografía"
   },
@@ -643,8 +619,8 @@ export const questions: Question[] = [
     category: "Demografía"
   },
   {
-    question: "¿Cuántos millones de personas viven en México?",
-    answer: 128,
+    question: "¿Cuántas personas viven en México?",
+    answer: 128000000,
     explanation: "México tiene aproximadamente 128 millones de habitantes, siendo el país hispanohablante más poblado del mundo.",
     category: "Demografía"
   },

@@ -291,14 +291,14 @@ footer {
 }
 
 .about-link {
-    color: #4ecdc4;
+    color: #ffffffb0;
     text-decoration: none;
     margin-left: 1rem;
     transition: color 0.3s;
 }
 
 .about-link:hover {
-    color: #45b7aa;
+    color: #ffffff;
 }
 
 .multiplayer-link {
@@ -911,6 +911,28 @@ footer {
 
 .backspace-key:hover {
   background: rgba(255, 107, 107, 0.3);
+}
+
+.minus-key {
+  background: rgba(255, 193, 7, 0.2);
+  border-color: rgba(255, 193, 7, 0.5);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.minus-key:hover {
+  background: rgba(255, 193, 7, 0.3);
+}
+
+.decimal-key {
+  background: rgba(156, 39, 176, 0.2);
+  border-color: rgba(156, 39, 176, 0.5);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.decimal-key:hover {
+  background: rgba(156, 39, 176, 0.3);
 }
 
 .submit-key {

@@ -14,28 +14,27 @@ export default function AboutPage() {
         margin: '20px 0',
         textAlign: 'center' as const
       }}>
-        <h2>¿Qué es CifrasDelMundo?</h2>
+        <h2>¿Qué es Cifras Del Mundo?</h2>
         <p style={{ margin: '20px 0', lineHeight: '1.6' }}>
-          CifrasDelMundo es un juego de trivia único donde todas las preguntas se responden con números. 
-          Descubre datos fascinantes sobre el mundo a través de cifras y estadísticas.
+          Cifras Del Mundo es un juego de preguntas con respuesta numérica. El juego fue creado en 3 días durante un viaje de colegas a Santander con el objetivo de beber.
         </p>
         
         <h3>¿Cómo jugar?</h3>
         <ul style={{ 
-          textAlign: 'left' as const, 
+          textAlign: 'center' as const, 
           maxWidth: '500px', 
           margin: '20px auto', 
           lineHeight: '1.6' 
         }}>
-          <li>Mantén presionado el botón para revelar la respuesta</li>
-          <li>Mantén presionado nuevamente para pasar a la siguiente pregunta</li>
-          <li>El contador muestra cuántas preguntas has visto</li>
-          <li>Las preguntas están organizadas por categorías</li>
+          <p>El jugador que más se acerque a la cifra correcta gana 1 punto. </p>
+          <p>El jugador que acierte la cifra exacta gana 2 puntos.</p>
+          <p>Un punto equivale a repartir 3 tragos.</p>
         </ul>
         
-        <h3>Categorías</h3>
+        
+        <h3>Créditos</h3>
         <p style={{ margin: '20px 0', lineHeight: '1.6' }}>
-          Naturaleza, Geografía, Historia, Matemáticas, Deportes y Demografía
+          Javi, Cholo, Agra, Solla, Ingelmo, Domingo, Rómulo.
         </p>
         
         <Link href="/" style={{
