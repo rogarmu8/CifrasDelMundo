@@ -192,6 +192,22 @@ export default function Home() {
     isClickableRef.current = isClickable
   }, [isClickable])
 
+  // Keyboard event handler
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      // Only handle Space and Enter keys
+      if (event.key === ' ' || event.key === 'Enter') {
+        event.preventDefault()
+        handleClick()
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [state, isClickable])
+
   if (!currentQuestion) {
     return (
       <div className="loading-container">

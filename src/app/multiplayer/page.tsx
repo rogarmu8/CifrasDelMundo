@@ -803,6 +803,56 @@ export default function Multiplayer() {
     }
   }, [currentRoom?.id])
 
+  // Keyboard event handler
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      const key = event.key
+
+      // Handle space key for next question (when in results state and host)
+      if (key === ' ' && currentRoom?.game_state === 'showing-results' && currentPlayer?.isHost) {
+        event.preventDefault()
+        nextQuestion()
+        return
+      }
+
+      // Only handle other keyboard input when in playing state and player hasn't answered
+      if (!currentRoom || currentRoom.game_state !== 'playing' || currentPlayer?.hasAnswered) {
+        return
+      }
+
+      // Number keys (0-9)
+      if (/^[0-9]$/.test(key)) {
+        event.preventDefault()
+        handleNumberInput(parseInt(key))
+      }
+      // Minus key
+      else if (key === '-' || key === '_') {
+        event.preventDefault()
+        handleMinusSign()
+      }
+      // Decimal point (both . and ,)
+      else if (key === '.' || key === ',') {
+        event.preventDefault()
+        handleDecimalPoint()
+      }
+      // Enter key or Space key
+      else if (key === 'Enter' || key === ' ') {
+        event.preventDefault()
+        handleSubmitAnswer()
+      }
+      // Delete/Backspace
+      else if (key === 'Backspace' || key === 'Delete') {
+        event.preventDefault()
+        handleBackspace()
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [currentRoom?.game_state, currentPlayer?.hasAnswered, currentInput])
+
   // Function to reload current game state
   const reloadGameState = async () => {
     if (!currentRoom) return
