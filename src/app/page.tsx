@@ -13,13 +13,15 @@ export default function Home() {
   const [isMobile, setIsMobile] = useState(false)
   const [showMobileHint, setShowMobileHint] = useState(false)
   const [isHolding, setIsHolding] = useState(false)
+  const [isHoldDebounced, setIsHoldDebounced] = useState(false)
   
   const holdTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const holdDebounceRef = useRef<NodeJS.Timeout | null>(null)
   const isClickableRef = useRef(isClickable)
   const hasIncrementedRef = useRef(false)
   const counterRef = useRef(0)
 
-  const HOLD_TIME = 600
+  const HOLD_TIME = 100
   const CLICK_DEBOUNCE = 500
 
   // Detect mobile device
@@ -111,23 +113,43 @@ export default function Home() {
   // Handle hold start
   const handleHoldStart = () => {
     setIsHolding(true)
-    holdTimeoutRef.current = setTimeout(() => {
-      if (state === 'respuesta') {
-        showAnswer()
-      } else if (state === 'siguiente') {
-        hasIncrementedRef.current = false // Reset flag before next question
-        showNextQuestion()
-      }
-      setIsHolding(false)
-    }, HOLD_TIME)
+    
+    // Clear any existing debounce timer
+    if (holdDebounceRef.current) {
+      clearTimeout(holdDebounceRef.current)
+    }
+    
+    // Set debounce timer - only allow action after 0.5s
+    holdDebounceRef.current = setTimeout(() => {
+      setIsHoldDebounced(true)
+      
+      // Now start the actual hold timer
+      holdTimeoutRef.current = setTimeout(() => {
+        if (state === 'respuesta') {
+          showAnswer()
+        } else if (state === 'siguiente') {
+          hasIncrementedRef.current = false // Reset flag before next question
+          showNextQuestion()
+        }
+        setIsHolding(false)
+        setIsHoldDebounced(false)
+      }, HOLD_TIME)
+    }, CLICK_DEBOUNCE) // Changed from HOLD_DEBOUNCE to CLICK_DEBOUNCE
   }
 
   // Handle hold end
   const handleHoldEnd = () => {
     setIsHolding(false)
+    setIsHoldDebounced(false)
+    
+    // Clear both timers
     if (holdTimeoutRef.current) {
       clearTimeout(holdTimeoutRef.current)
       holdTimeoutRef.current = null
+    }
+    if (holdDebounceRef.current) {
+      clearTimeout(holdDebounceRef.current)
+      holdDebounceRef.current = null
     }
   }
 
@@ -216,13 +238,14 @@ export default function Home() {
           <div className="button-group">
             <button 
               id="mainBtn" 
-              className={`btn ${isHolding ? 'holding' : ''}`}
+              className={`btn ${isHolding ? 'holding' : ''} ${isHoldDebounced ? 'debounced' : ''}`}
               onMouseDown={handleHoldStart}
               onMouseUp={handleHoldEnd}
               onMouseLeave={handleHoldEnd}
               onTouchStart={handleHoldStart}
               onTouchEnd={handleHoldEnd}
               onClick={handleClick}
+              onContextMenu={(e) => e.preventDefault()}
             >
               <span id="btnLabel">{state === 'respuesta' ? 'Respuesta' : 'Siguiente'}</span>
             </button>

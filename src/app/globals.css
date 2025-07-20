@@ -167,6 +167,9 @@ h1 {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
 .btn::before {
@@ -183,6 +186,18 @@ h1 {
 
 .btn.holding::before {
     width: 100%;
+}
+
+.btn.debounced::before {
+    width: 0%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: width 0.5s ease;
+}
+
+.btn.holding.debounced::before {
+    width: 100%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    transition: width 0.6s ease;
 }
 
 .btn.reset-progress::before {
