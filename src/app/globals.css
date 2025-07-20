@@ -163,6 +163,10 @@ h1 {
     background: rgba(245, 245, 245, 0.75);
     color: #333;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .btn::before {
@@ -714,6 +718,32 @@ footer {
   height: 32px;
 }
 
+.reload-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.reload-btn:hover {
+  transform: scale(1.1);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.reload-btn svg {
+  width: 32px;
+  height: 32px;
+}
+
 .btn-secondary {
   background: rgba(255, 255, 255, 0.2);
   color: #fff;
@@ -1118,7 +1148,7 @@ footer {
 }
 
 .results-row.current-player-row .cell.points.gold {
-  color: #ffd700;
+  color: #ff852d;
   font-weight: bold;
 }
 
@@ -1138,7 +1168,7 @@ footer {
 }
 
 .cell.points.gold {
-  color: #ffd700;
+  color: #ff852d;
 }
 
 .cell.points.green {

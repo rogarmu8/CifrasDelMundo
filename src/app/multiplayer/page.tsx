@@ -791,6 +791,44 @@ export default function Multiplayer() {
     cleanupOldRooms()
   }, [])
 
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  // Scroll to top when room is created or joined
+  useEffect(() => {
+    if (currentRoom) {
+      window.scrollTo(0, 0)
+    }
+  }, [currentRoom?.id])
+
+  // Function to reload current game state
+  const reloadGameState = async () => {
+    if (!currentRoom) return
+
+    try {
+      const { data: room, error } = await supabase
+        .from('rooms')
+        .select('*')
+        .eq('id', currentRoom.id)
+        .single()
+
+      if (!error && room) {
+        console.log('Reloading game state:', room)
+        setCurrentRoom(room as Room)
+        
+        // Update current player state
+        const updatedPlayer = (room as Room).players?.find(p => p.id === currentPlayer?.id)
+        if (updatedPlayer) {
+          setCurrentPlayer(updatedPlayer)
+        }
+      }
+    } catch (error) {
+      console.error('Error reloading game state:', error)
+    }
+  }
+
   if (currentRoom) {
     return (
       <div className="container">
@@ -798,6 +836,11 @@ export default function Multiplayer() {
           <button onClick={leaveRoom} className="leave-room-btn" title="Leave Room">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
               <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
+            </svg>
+          </button>
+          <button onClick={reloadGameState} className="reload-btn" title="Reload Game State">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
             </svg>
           </button>
           <div className="room-info">
@@ -816,6 +859,9 @@ export default function Multiplayer() {
             </h1>
             {currentRoom?.question_count && (
               <p>{currentRoom.question_count} Preguntas</p>
+            )}
+            {!currentRoom?.question_count && (
+              <p>Modo infinito</p>
             )}
           </div>
         </header>
@@ -839,7 +885,7 @@ export default function Multiplayer() {
               )}
               {!currentPlayer?.isHost && (
                 <div className="start-game-container">
-                  <p>Esperando a que el host inicie el juego...</p>
+                  <p style={{ color: '#555555' }}>Esperando a que el host inicie el juego...</p>
                 </div>
               )}
             </div>
@@ -950,7 +996,7 @@ export default function Multiplayer() {
             <div className="button-card">
               <div className="results-table">
                 <div className="results-header">
-                  <div className="header-cell">Pos</div>
+                  <div className="header-cell"></div>
                   <div className="header-cell">Nombres</div>
                   <div className="header-cell">Respuesta</div>
                   <div className="header-cell">Esta Ronda</div>
