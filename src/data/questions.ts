@@ -142,12 +142,6 @@ export const questions: Question[] = [
     category: "Geografía"
   },
   {
-    question: "¿Cuántos metros de altura tiene el Monte Everest?",
-    answer: 8849,
-    explanation: "El Monte Everest tiene una altura oficial de 8,849 metros sobre el nivel del mar, siendo la montaña más alta del mundo.",
-    category: "Geografía"
-  },
-  {
     question: "¿Cuántos kilómetros cuadrados tiene el desierto del Sahara?",
     answer: 9200000,
     explanation: "El desierto del Sahara cubre aproximadamente 9.2 millones de kilómetros cuadrados, siendo el desierto cálido más grande del mundo.",
@@ -389,7 +383,7 @@ export const questions: Question[] = [
   {
     question: "¿Cuántos números perfectos se conocen hasta 2024?",
     answer: 51,
-    explanation: "Hasta 2024 se conocen 51 números perfectos, siendo el último descubierto en 2018.",
+    explanation: "Hasta 2024 se conocen 51 números perfectos. Un número perfecto es aquel que es igual a la suma de sus divisores propios positivos (excluyendo el propio número), siendo el último descubierto en 2018.",
     category: "Matemáticas"
   },
   {
@@ -407,7 +401,7 @@ export const questions: Question[] = [
   {
     question: "¿Cuántos números de Fibonacci hay entre 1 y 1 millón?",
     answer: 30,
-    explanation: "Entre 1 y 1 millón hay 30 números de Fibonacci: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811, 514229, 832040.",
+    explanation: "Entre 1 y 1 millón hay 30 números de Fibonacci. La secuencia de Fibonacci comienza con 0,1 y cada número siguiente es la suma de los dos anteriores: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811, 514229, 832040.",
     category: "Matemáticas"
   },
   {
@@ -425,7 +419,7 @@ export const questions: Question[] = [
   {
     question: "¿Cuántos números triangulares hay entre 1 y 10,000?",
     answer: 140,
-    explanation: "Entre 1 y 10,000 hay 140 números triangulares, siendo el último 9,940.",
+    explanation: "Entre 1 y 10,000 hay 140 números triangulares. Un número triangular es aquel que puede representarse como un triángulo equilátero de puntos, siendo el último 9,940.",
     category: "Matemáticas"
   },
   {
@@ -628,6 +622,471 @@ export const questions: Question[] = [
     question: "¿Cuántos años es la esperanza de vida promedio en Suiza?",
     answer: 83,
     explanation: "Suiza tiene una esperanza de vida promedio de 83 años, una de las más altas del mundo.",
+    category: "Demografía"
+  },
+  // NUEVAS PREGUNTAS - NATURALEZA
+  {
+    question: "¿Cuántas hormigas hay en un hormiguero común de 2 años de antigüedad?",
+    answer: 50000,
+    explanation: "Un hormiguero común de 2 años de antigüedad puede contener hasta 50,000 hormigas, incluyendo obreras, soldados y la reina.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuántas almendras tienes que comer para que la dosis se considere mortal?",
+    answer: 50,
+    explanation: "Se necesitan aproximadamente 50 almendras amargas para alcanzar una dosis letal de cianuro, ya que contienen amigdalina que se convierte en cianuro de hidrógeno.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuántas células tiene en promedio un ser humano?",
+    answer: 37000000000000,
+    explanation: "Un ser humano adulto tiene aproximadamente 37 billones de células en su cuerpo, aunque esta cifra puede variar según el tamaño y la edad.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuántos huevos pone una gallina en un año en promedio?",
+    answer: 250,
+    explanation: "Una gallina ponedora puede producir aproximadamente 250 huevos al año en condiciones óptimas de alimentación y cuidado.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuántos peces se consideran un banco de peces?",
+    answer: 1000,
+    explanation: "Se considera un banco de peces cuando hay al menos 1,000 individuos nadando juntos de manera coordinada, aunque algunos bancos pueden contener millones de peces.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuántas lobas hembra hay en una manada?",
+    answer: 1,
+    explanation: "En una manada de lobos típica solo hay una loba hembra alfa que se reproduce, aunque puede haber otras hembras subordinadas que no se aparean.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuántos insectos existen?",
+    answer: 1000000000000000000,
+    explanation: "Se estima que existen aproximadamente 1 quintillón de insectos en el planeta Tierra, siendo el grupo de animales más numeroso y diverso.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuántos pies tiene un cienpiés?",
+    answer: 30,
+    explanation: "Contrariamente a su nombre, un cienpiés típico tiene entre 30 y 354 pares de patas, dependiendo de la especie, pero nunca exactamente 100.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuál es la máxima edad nunca registrada para un ser humano hasta 2025?",
+    answer: 122,
+    explanation: "La persona más longeva verificada fue Jeanne Calment, que vivió 122 años y 164 días, falleciendo en 1997. Este récord aún no ha sido superado.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuántas gotas de agua caben en un vaso de 200ml?",
+    answer: 4000,
+    explanation: "En un vaso de 200ml caben aproximadamente 4,000 gotas de agua, considerando que cada gota tiene un volumen promedio de 0.05ml.",
+    category: "Matemáticas"
+  },
+  // NUEVAS PREGUNTAS - DEMOGRAFÍA
+  {
+    question: "¿Cuánto vodka se consume en Polonia al año en litros?",
+    answer: 500000000,
+    explanation: "Polonia consume aproximadamente 500 millones de litros de vodka al año, siendo uno de los mayores consumidores per cápita del mundo.",
+    category: "Demografía"
+  },
+  {
+    question: "¿Cuánta cerveza se consume en Alemania en litros al año?",
+    answer: 8000000000,
+    explanation: "Alemania consume aproximadamente 8,000 millones de litros de cerveza al año, siendo uno de los países con mayor consumo per cápita del mundo.",
+    category: "Demografía"
+  },
+  {
+    question: "¿Cuántas personas se llaman María en España en el año 2025?",
+    answer: 600000,
+    explanation: "Se estima que aproximadamente 600,000 personas se llaman María en España en 2025, siendo uno de los nombres más comunes del país.",
+    category: "Demografía"
+  },
+  // NUEVAS PREGUNTAS - GEOGRAFÍA
+  {
+    question: "¿Cuánto miden todas las carreteras y caminos del mundo unidos?",
+    answer: 65000000,
+    explanation: "Todas las carreteras y caminos del mundo suman aproximadamente 65 millones de kilómetros, incluyendo autopistas, carreteras nacionales y caminos rurales.",
+    category: "Geografía"
+  },
+  {
+    question: "¿Cuánto se tardó en dar la primera vuelta al mundo?",
+    answer: 1082,
+    explanation: "La primera circunnavegación del mundo, completada por la expedición de Magallanes-Elcano, tardó 1,082 días (casi 3 años) entre 1519 y 1522.",
+    category: "Historia"
+  },
+  {
+    question: "¿Cuántos animales se han extinguido según la ciencia a día de hoy?",
+    answer: 900,
+    explanation: "Según registros científicos, se han extinguido aproximadamente 900 especies de animales desde el año 1500, aunque la cifra real podría ser mucho mayor debido a especies no documentadas.",
+    category: "Naturaleza"
+  },
+  // NUEVAS PREGUNTAS ADICIONALES - NATURALEZA
+  {
+    question: "¿Cuántos metros de longitud puede alcanzar una medusa melena de león ártica?",
+    answer: 36,
+    explanation: "La medusa melena de león ártica puede alcanzar hasta 36 metros de longitud, siendo el animal más largo del mundo.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuántos años puede vivir una esponja de cristal en aguas profundas?",
+    answer: 11000,
+    explanation: "Las esponjas de cristal pueden vivir hasta 11,000 años, siendo uno de los organismos más longevos del planeta.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuántos kilómetros por hora puede volar un vencejo común?",
+    answer: 169,
+    explanation: "El vencejo común puede alcanzar velocidades de hasta 169 kilómetros por hora, siendo una de las aves más rápidas en vuelo horizontal.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuántos metros de profundidad puede alcanzar un pingüino emperador en una inmersión?",
+    answer: 565,
+    explanation: "Un pingüino emperador puede sumergirse hasta 565 metros de profundidad, siendo el ave que bucea más profundo.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuántos años puede vivir una langosta americana?",
+    answer: 140,
+    explanation: "La langosta americana puede vivir hasta 140 años, siendo uno de los crustáceos más longevos del océano.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuántos kilómetros puede migrar una ballena jorobada en un año?",
+    answer: 25000,
+    explanation: "Una ballena jorobada puede migrar hasta 25,000 kilómetros en un año, desde las aguas polares hasta las tropicales.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuántos metros de altura puede saltar un impala?",
+    answer: 3,
+    explanation: "Un impala puede saltar hasta 3 metros de altura, siendo uno de los antílopes con mayor capacidad de salto.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuántos años puede vivir una tortuga de las Galápagos en cautiverio?",
+    answer: 177,
+    explanation: "Una tortuga de las Galápagos puede vivir hasta 177 años en cautiverio, siendo uno de los reptiles más longevos.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuántos kilómetros por hora puede correr un avestruz?",
+    answer: 70,
+    explanation: "Un avestruz puede correr hasta 70 kilómetros por hora, siendo el ave más rápida en tierra.",
+    category: "Naturaleza"
+  },
+  {
+    question: "¿Cuántos metros de longitud puede alcanzar un calamar gigante?",
+    answer: 13,
+    explanation: "Un calamar gigante puede alcanzar hasta 13 metros de longitud, siendo uno de los invertebrados más grandes del océano.",
+    category: "Naturaleza"
+  },
+  // NUEVAS PREGUNTAS ADICIONALES - GEOGRAFÍA
+  {
+    question: "¿Cuántos metros de altura tiene el monte más alto de África, el Kilimanjaro?",
+    answer: 5895,
+    explanation: "El monte Kilimanjaro tiene una altura de 5,895 metros, siendo el pico más alto de África.",
+    category: "Geografía"
+  },
+  {
+    question: "¿Cuántos kilómetros de longitud tiene el río Nilo?",
+    answer: 6650,
+    explanation: "El río Nilo tiene una longitud de 6,650 kilómetros, siendo el río más largo de África.",
+    category: "Geografía"
+  },
+  {
+    question: "¿Cuántos metros de profundidad tiene el lago más profundo de África, el lago Tanganica?",
+    answer: 1470,
+    explanation: "El lago Tanganica tiene una profundidad máxima de 1,470 metros, siendo el lago más profundo de África.",
+    category: "Geografía"
+  },
+  {
+    question: "¿Cuántos kilómetros cuadrados tiene el lago más grande de África, el lago Victoria?",
+    answer: 68800,
+    explanation: "El lago Victoria tiene una superficie de 68,800 kilómetros cuadrados, siendo el lago más grande de África.",
+    category: "Geografía"
+  },
+  {
+    question: "¿Cuántos metros de altura tiene la montaña más alta de Europa, el Monte Elbrus?",
+    answer: 5642,
+    explanation: "El Monte Elbrus tiene una altura de 5,642 metros, siendo el pico más alto de Europa.",
+    category: "Geografía"
+  },
+  {
+    question: "¿Cuántos kilómetros de longitud tiene el río más largo de Asia, el Yangtsé?",
+    answer: 6300,
+    explanation: "El río Yangtsé tiene una longitud de 6,300 kilómetros, siendo el río más largo de Asia.",
+    category: "Geografía"
+  },
+  {
+    question: "¿Cuántos metros de profundidad tiene el lago más profundo de Europa, el lago Hornindalsvatnet?",
+    answer: 514,
+    explanation: "El lago Hornindalsvatnet tiene una profundidad máxima de 514 metros, siendo el lago más profundo de Europa.",
+    category: "Geografía"
+  },
+  {
+    question: "¿Cuántos kilómetros cuadrados tiene el desierto más grande de Asia, el desierto de Gobi?",
+    answer: 1300000,
+    explanation: "El desierto de Gobi tiene una superficie de 1.3 millones de kilómetros cuadrados, siendo el desierto más grande de Asia.",
+    category: "Geografía"
+  },
+  {
+    question: "¿Cuántos metros de altura tiene la montaña más alta de América del Norte, el Denali?",
+    answer: 6190,
+    explanation: "El Denali tiene una altura de 6,190 metros, siendo el pico más alto de América del Norte.",
+    category: "Geografía"
+  },
+  {
+    question: "¿Cuántos kilómetros de longitud tiene el río más largo de Australia, el río Murray?",
+    answer: 2508,
+    explanation: "El río Murray tiene una longitud de 2,508 kilómetros, siendo el río más largo de Australia.",
+    category: "Geografía"
+  },
+  // NUEVAS PREGUNTAS ADICIONALES - HISTORIA
+  {
+    question: "¿En qué año se fundó la ciudad de Jerusalén?",
+    answer: -3000,
+    explanation: "La ciudad de Jerusalén fue fundada alrededor del año 3000 a.C., siendo una de las ciudades más antiguas del mundo.",
+    category: "Historia"
+  },
+  {
+    question: "¿En qué año se construyó la primera pirámide escalonada de Egipto?",
+    answer: -2630,
+    explanation: "La primera pirámide escalonada de Egipto, la Pirámide de Djoser, fue construida alrededor del año 2630 a.C.",
+    category: "Historia"
+  },
+  {
+    question: "¿En qué año se fundó la ciudad de Atenas?",
+    answer: -3000,
+    explanation: "La ciudad de Atenas fue fundada alrededor del año 3000 a.C., siendo una de las ciudades más antiguas de Europa.",
+    category: "Historia"
+  },
+  {
+    question: "¿En qué año se construyó el primer acueducto romano?",
+    answer: -312,
+    explanation: "El primer acueducto romano, el Aqua Appia, fue construido en el año 312 a.C. durante la República Romana.",
+    category: "Historia"
+  },
+  {
+    question: "¿En qué año se fundó la ciudad de Damasco?",
+    answer: -3000,
+    explanation: "La ciudad de Damasco fue fundada alrededor del año 3000 a.C., siendo considerada la ciudad habitada más antigua del mundo.",
+    category: "Historia"
+  },
+  {
+    question: "¿En qué año se construyó la primera biblioteca pública del mundo?",
+    answer: -300,
+    explanation: "La primera biblioteca pública del mundo fue construida en Alejandría alrededor del año 300 a.C. por Ptolomeo I.",
+    category: "Historia"
+  },
+  {
+    question: "¿En qué año se fundó la ciudad de Petra?",
+    answer: -312,
+    explanation: "La ciudad de Petra fue fundada en el año 312 a.C. por los nabateos, siendo una importante ciudad comercial.",
+    category: "Historia"
+  },
+  {
+    question: "¿En qué año se construyó el primer faro del mundo?",
+    answer: -280,
+    explanation: "El primer faro del mundo, el Faro de Alejandría, fue construido alrededor del año 280 a.C. en la isla de Faros.",
+    category: "Historia"
+  },
+  {
+    question: "¿En qué año se fundó la ciudad de Pérgamo?",
+    answer: -281,
+    explanation: "La ciudad de Pérgamo fue fundada en el año 281 a.C. por Filetero, siendo la capital del Reino de Pérgamo.",
+    category: "Historia"
+  },
+  {
+    question: "¿En qué año se construyó el primer teatro de piedra del mundo?",
+    answer: -340,
+    explanation: "El primer teatro de piedra del mundo fue construido en Epidauro alrededor del año 340 a.C. por Policleto el Joven.",
+    category: "Historia"
+  },
+  // NUEVAS PREGUNTAS ADICIONALES - MATEMÁTICAS
+  {
+    question: "¿Cuántos números de Mersenne se conocen hasta 2024?",
+    answer: 51,
+    explanation: "Hasta 2024 se conocen 51 números de Mersenne. Los números de Mersenne son números primos que se pueden expresar como 2^n - 1, siendo el último descubierto en 2018.",
+    category: "Matemáticas"
+  },
+  {
+    question: "¿Cuántos grados suman los ángulos internos de un heptágono?",
+    answer: 900,
+    explanation: "Los ángulos internos de un heptágono suman 900 grados (7 lados × 128.57 grados cada uno).",
+    category: "Matemáticas"
+  },
+  {
+    question: "¿Cuántos metros cuadrados tiene una cancha de tenis estándar?",
+    answer: 260,
+    explanation: "Una cancha de tenis estándar tiene 260 metros cuadrados (23.77 metros × 10.97 metros).",
+    category: "Matemáticas"
+  },
+  {
+    question: "¿Cuántos números de Catalan hay entre 1 y 1 millón?",
+    answer: 14,
+    explanation: "Entre 1 y 1 millón hay 14 números de Catalan. Los números de Catalan son una secuencia de números naturales que aparecen en varios problemas de combinatoria: 1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, 58786, 208012, 742900.",
+    category: "Matemáticas"
+  },
+  {
+    question: "¿Cuántos grados suman los ángulos internos de un octágono?",
+    answer: 1080,
+    explanation: "Los ángulos internos de un octágono suman 1,080 grados (8 lados × 135 grados cada uno).",
+    category: "Matemáticas"
+  },
+  {
+    question: "¿Cuántos metros cúbicos tiene un estadio de fútbol promedio?",
+    answer: 500000,
+    explanation: "Un estadio de fútbol promedio tiene un volumen de aproximadamente 500,000 metros cúbicos.",
+    category: "Matemáticas"
+  },
+  {
+    question: "¿Cuántos números de Lucas hay entre 1 y 10,000?",
+    answer: 20,
+    explanation: "Entre 1 y 10,000 hay 20 números de Lucas. La secuencia de Lucas es similar a Fibonacci pero comienza con 2,1: 2, 1, 3, 4, 7, 11, 18, 29, 47, 76, 123, 199, 322, 521, 843, 1364, 2207, 3571, 5778, 9349.",
+    category: "Matemáticas"
+  },
+  {
+    question: "¿Cuántos grados suman los ángulos internos de un nonágono?",
+    answer: 1260,
+    explanation: "Los ángulos internos de un nonágono suman 1,260 grados (9 lados × 140 grados cada uno).",
+    category: "Matemáticas"
+  },
+  {
+    question: "¿Cuántos metros cuadrados tiene una pista de atletismo olímpica?",
+    answer: 10500,
+    explanation: "Una pista de atletismo olímpica tiene 10,500 metros cuadrados, incluyendo la pista y el campo interior.",
+    category: "Matemáticas"
+  },
+  {
+    question: "¿Cuántos números de Pell hay entre 1 y 100,000?",
+    answer: 15,
+    explanation: "Entre 1 y 100,000 hay 15 números de Pell. Los números de Pell son una secuencia donde cada número es el doble del anterior más el penúltimo: 0, 1, 2, 5, 12, 29, 70, 169, 408, 985, 2378, 5741, 13860, 33461, 80782.",
+    category: "Matemáticas"
+  },
+  // NUEVAS PREGUNTAS ADICIONALES - DEPORTES
+  {
+    question: "¿Cuántos Grand Slams ganó Novak Djokovic hasta 2024?",
+    answer: 24,
+    explanation: "Novak Djokovic ha ganado 24 Grand Slams hasta 2024, siendo el tenista con más títulos de Grand Slam en la historia.",
+    category: "Deportes"
+  },
+  {
+    question: "¿Cuántos goles marcó Cristiano Ronaldo en su carrera hasta 2024?",
+    answer: 850,
+    explanation: "Cristiano Ronaldo ha marcado 850 goles en su carrera hasta 2024, siendo uno de los máximos goleadores de la historia.",
+    category: "Deportes"
+  },
+  {
+    question: "¿Cuántos campeonatos de la NBA ganó LeBron James hasta 2024?",
+    answer: 4,
+    explanation: "LeBron James ha ganado 4 campeonatos de la NBA hasta 2024, con tres equipos diferentes: Miami Heat, Cleveland Cavaliers y Los Angeles Lakers.",
+    category: "Deportes"
+  },
+  {
+    question: "¿Cuántos Grand Slams ganó Serena Williams en su carrera?",
+    answer: 23,
+    explanation: "Serena Williams ganó 23 Grand Slams en su carrera, siendo la tenista con más títulos de Grand Slam en la era abierta.",
+    category: "Deportes"
+  },
+  {
+    question: "¿Cuántos campeonatos de Fórmula 1 ganó Max Verstappen hasta 2024?",
+    answer: 3,
+    explanation: "Max Verstappen ha ganado 3 campeonatos de Fórmula 1 hasta 2024, siendo uno de los pilotos más jóvenes en lograrlo.",
+    category: "Deportes"
+  },
+  {
+    question: "¿Cuántos puntos anotó LeBron James en su carrera hasta 2024?",
+    answer: 40000,
+    explanation: "LeBron James ha anotado más de 40,000 puntos en su carrera hasta 2024, siendo el máximo anotador de la historia de la NBA.",
+    category: "Deportes"
+  },
+  {
+    question: "¿Cuántos Grand Slams ganó Steffi Graf en su carrera?",
+    answer: 22,
+    explanation: "Steffi Graf ganó 22 Grand Slams en su carrera, siendo una de las tenistas más exitosas de la historia.",
+    category: "Deportes"
+  },
+  {
+    question: "¿Cuántos goles marcó Diego Maradona en su carrera?",
+    answer: 345,
+    explanation: "Diego Maradona marcó 345 goles en su carrera profesional, siendo uno de los mejores jugadores de la historia del fútbol.",
+    category: "Deportes"
+  },
+  {
+    question: "¿Cuántos campeonatos de la NBA ganó Kobe Bryant?",
+    answer: 5,
+    explanation: "Kobe Bryant ganó 5 campeonatos de la NBA, todos con los Los Angeles Lakers en dos periodos de tres y dos títulos consecutivos.",
+    category: "Deportes"
+  },
+  {
+    question: "¿Cuántos Grand Slams ganó Pete Sampras en su carrera?",
+    answer: 14,
+    explanation: "Pete Sampras ganó 14 Grand Slams en su carrera, siendo uno de los tenistas más exitosos de la década de 1990.",
+    category: "Deportes"
+  },
+  // NUEVAS PREGUNTAS ADICIONALES - DEMOGRAFÍA
+  {
+    question: "¿Cuántas personas viven en Estados Unidos?",
+    answer: 340000000,
+    explanation: "Estados Unidos tiene aproximadamente 340 millones de habitantes, siendo el tercer país más poblado del mundo.",
+    category: "Demografía"
+  },
+  {
+    question: "¿Cuántos años es la esperanza de vida promedio en Australia?",
+    answer: 83,
+    explanation: "Australia tiene una esperanza de vida promedio de 83 años, una de las más altas del mundo.",
+    category: "Demografía"
+  },
+  {
+    question: "¿Cuántas personas viven en Indonesia?",
+    answer: 280000000,
+    explanation: "Indonesia tiene aproximadamente 280 millones de habitantes, siendo el cuarto país más poblado del mundo.",
+    category: "Demografía"
+  },
+  {
+    question: "¿Cuántos años es la edad promedio de maternidad en Canadá?",
+    answer: 30,
+    explanation: "En Canadá, la edad promedio para tener el primer hijo es de 30 años.",
+    category: "Demografía"
+  },
+  {
+    question: "¿Cuántas personas viven en Turquía?",
+    answer: 85000000,
+    explanation: "Turquía tiene aproximadamente 85 millones de habitantes, siendo uno de los países más poblados de Europa.",
+    category: "Demografía"
+  },
+  {
+    question: "¿Cuántos años es la edad promedio de jubilación en Japón?",
+    answer: 65,
+    explanation: "En Japón, la edad promedio de jubilación es de 65 años.",
+    category: "Demografía"
+  },
+  {
+    question: "¿Cuántas personas viven en Irán?",
+    answer: 87000000,
+    explanation: "Irán tiene aproximadamente 87 millones de habitantes, siendo uno de los países más poblados de Oriente Medio.",
+    category: "Demografía"
+  },
+  {
+    question: "¿Cuántos años es la edad promedio de matrimonio en Francia?",
+    answer: 35,
+    explanation: "En Francia, la edad promedio para contraer matrimonio es de 35 años.",
+    category: "Demografía"
+  },
+  {
+    question: "¿Cuántas personas viven en Egipto?",
+    answer: 110000000,
+    explanation: "Egipto tiene aproximadamente 110 millones de habitantes, siendo el país más poblado del mundo árabe.",
+    category: "Demografía"
+  },
+  {
+    question: "¿Cuántos años es la esperanza de vida promedio en Canadá?",
+    answer: 82,
+    explanation: "Canadá tiene una esperanza de vida promedio de 82 años, una de las más altas del mundo.",
     category: "Demografía"
   }
 ]; 
