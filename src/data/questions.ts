@@ -651,8 +651,8 @@ export const questions: Question[] = [
   },
   {
     question: "¿Cuántos peces se consideran un banco de peces?",
-    answer: 1000,
-    explanation: "Se considera un banco de peces cuando hay al menos 1,000 individuos nadando juntos de manera coordinada, aunque algunos bancos pueden contener millones de peces.",
+    answer: 6,
+    explanation: "Se considera un banco de peces cuando hay al menos 6 individuos nadando juntos de manera coordinada, aunque algunos bancos pueden contener millones de peces.",
     category: "Naturaleza"
   },
   {
@@ -662,9 +662,9 @@ export const questions: Question[] = [
     category: "Naturaleza"
   },
   {
-    question: "¿Cuántos insectos existen?",
-    answer: 1000000000000000000,
-    explanation: "Se estima que existen aproximadamente 1 quintillón de insectos en el planeta Tierra, siendo el grupo de animales más numeroso y diverso.",
+    question: "¿Cuántos animales con 10 patas existen?",
+    answer: 15000,
+    explanation: "Se estima que existen aproximadamente 15,000 especies de animales con 10 patas en el planeta Tierra. Estos incluyen principalmente crustáceos como cangrejos, langostas, camarones y percebes, que pertenecen al grupo de los decápodos.",
     category: "Naturaleza"
   },
   {
