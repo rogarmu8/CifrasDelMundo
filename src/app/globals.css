@@ -172,37 +172,40 @@ h1 {
     touch-action: manipulation;
 }
 
-.btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    transition: width 0.6s ease;
-    z-index: 1;
-}
+/* Progress bar animation - only on mobile */
+@media (max-width: 768px) {
+    .btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        transition: width 0.6s ease;
+        z-index: 1;
+    }
 
-.btn.holding::before {
-    width: 100%;
-}
+    .btn.holding::before {
+        width: 100%;
+    }
 
-.btn.debounced::before {
-    width: 0%;
-    background: rgba(255, 255, 255, 0.3);
-    transition: width 0.5s ease;
-}
+    .btn.debounced::before {
+        width: 0%;
+        background: rgba(255, 255, 255, 0.3);
+        transition: width 0.5s ease;
+    }
 
-.btn.holding.debounced::before {
-    width: 100%;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    transition: width 0.6s ease;
-}
+    .btn.holding.debounced::before {
+        width: 100%;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        transition: width 0.6s ease;
+    }
 
-.btn.reset-progress::before {
-    transition: none;
-    width: 0%;
+    .btn.reset-progress::before {
+        transition: none;
+        width: 0%;
+    }
 }
 
 .btn:hover {
